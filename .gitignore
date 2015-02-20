@@ -1,0 +1,9 @@
+.idea/
+.idea/**/
+node_modules
+node_modules/**/
+bower_componants
+bower_componants/**/
+*.js.map
+tests/*.js
+src/ts/**/*.js

@@ -1,0 +1,22 @@
+{
+  "name": "TypeScrip Demo",
+  "version": "0.0.0",
+  "authors": [
+    "Jake Aitchison <jake.aitchison@outlook.com>"
+  ],
+  "license": "LGPL v2.1",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.15",
+    "requirejs-hogan-plugin": "~0.3.1",
+    "bootstrap": "~3.3.2",
+    "underscore": "~1.7.0",
+    "momentjs": "~2.9.0"
+  }
+}
