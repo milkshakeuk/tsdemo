@@ -1,33 +1,27 @@
 // File: app.ts
 /// <reference path="../../../typings/requirejs/require.d.ts"/>
 /// <reference path="./Services/Router"/>
-/// <reference path="./Views/NavigationView" />
-/// <reference path="./Controllers/HomeController"/>
-/// <reference path="./Controllers/AboutController"/>
+/// <reference path="./Interfaces/IController" />
+/// <reference path="./Controllers/NavigationController" />
 
 
 import Router = require('./Services/Router');
-import HomeController = require('./Controllers/HomeController');
-import NavigationView = require('./Views/NavigationView');
-import AboutController = require('./Controllers/AboutController');
+import IController = require('./Interfaces/IController');
+import NavigationController = require('./Controllers/NavigationController');
 
 class App {
 
     router:Router;
+    navigation:IController;
 
     constructor(){
         this.router = new Router();
-        this.router.addRoute({ path: '/', controller: new HomeController()});
-        this.router.addRoute({ path:'/about', controller: new AboutController()});
+        this.router.addRoute({ path: '/', controller: 'HomeController'});
+        this.router.addRoute({ path:'/about', controller: 'AboutController'});
     }
 
     start = () => {
-        var navCollection = { navs:[
-            { name: 'Home', path:'#', chosen: true },
-            { name: 'About', path:'#/about' }
-        ]};
-        var navView = new NavigationView('#nav-region', navCollection);
-        navView.render();
+        this.navigation = new NavigationController();
         this.router.route();
     }
 

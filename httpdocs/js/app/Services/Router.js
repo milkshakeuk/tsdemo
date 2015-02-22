@@ -13,7 +13,9 @@ define(["require", "exports", 'underscore'], function (require, exports, _) {
         Router.prototype.route = function () {
             var url = location.hash.slice(1) || '/';
             var route = _.findWhere(this.routes, { path: url });
-            route.controller.load();
+            require(['./ControllerProvider'], function (ControllerProvider) {
+                ControllerProvider.resolve(route.controller);
+            });
         };
         return Router;
     })();
