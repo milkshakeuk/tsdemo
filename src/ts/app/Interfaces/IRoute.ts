@@ -5,7 +5,7 @@ import IController = require('./IController');
 
 interface IRoute {
     path:string;
-    controller:IController;
+    controller:string;
 }
 
 export = IRoute;

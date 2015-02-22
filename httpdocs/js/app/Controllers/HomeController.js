@@ -1,16 +1,14 @@
 define(["require", "exports"], function (require, exports) {
     var HomeController = (function () {
         function HomeController() {
+            this.renderViews();
         }
         HomeController.prototype.renderViews = function () {
-            require(['../Views/HomeView', '../Models/User'], function (HomeView, User) {
+            require(['../Views/HomeView', '../Models/User'], function (View, User) {
                 var model = new User('Mr', 'Awesome');
-                var hView = new HomeView('#main-region', model);
-                hView.render();
+                var view = new View('#main-region', model);
+                view.render();
             });
-        };
-        HomeController.prototype.load = function () {
-            this.renderViews();
         };
         return HomeController;
     })();

@@ -1,6 +1,6 @@
 // File: IController.ts
 
 interface IController {
-    load():void;
+    renderViews():void;
 }
 export = IController;

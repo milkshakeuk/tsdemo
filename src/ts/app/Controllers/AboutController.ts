@@ -7,13 +7,16 @@ import IController = require('../Interfaces/IController');
 
 class AboutController implements IController {
 
-    constructor(){}
+    constructor(){
+        this.renderViews();
+    }
 
-    load(){
-        require(['../Views/AboutView'], (AboutView) => {
-            var view = new AboutView('#main-region');
+    renderViews(){
+        require(['../Views/AboutView'], (View) => {
+            var view = new View('#main-region');
             view.render();
         });
     }
 }
+
 export = AboutController;
