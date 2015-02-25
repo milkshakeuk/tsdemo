@@ -4,6 +4,7 @@
 /// <reference path="../../../../typings/jquery/jquery.d.ts"/>
 
 import IController = require('../Interfaces/IController');
+import AboutView = require('../Views/AboutView');
 
 class AboutController implements IController {
 
@@ -12,10 +13,8 @@ class AboutController implements IController {
     }
 
     renderViews(){
-        require(['../Views/AboutView'], (View) => {
-            var view = new View('#main-region');
-            view.render();
-        });
+        var view = new AboutView('#main-region');
+        view.render();
     }
 }
 

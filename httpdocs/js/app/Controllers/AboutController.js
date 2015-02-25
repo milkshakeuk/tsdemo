@@ -1,13 +1,11 @@
-define(["require", "exports"], function (require, exports) {
+define(["require", "exports", '../Views/AboutView'], function (require, exports, AboutView) {
     var AboutController = (function () {
         function AboutController() {
             this.renderViews();
         }
         AboutController.prototype.renderViews = function () {
-            require(['../Views/AboutView'], function (View) {
-                var view = new View('#main-region');
-                view.render();
-            });
+            var view = new AboutView('#main-region');
+            view.render();
         };
         return AboutController;
     })();

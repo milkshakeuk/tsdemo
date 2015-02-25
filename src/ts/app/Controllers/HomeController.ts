@@ -5,19 +5,19 @@
 /// <reference path="../../../../typings/jquery/jquery.d.ts"/>
 
 import IController = require('../Interfaces/IController');
+import HomeView = require('../Views/HomeView');
+import User = require('../Models/User');
 
 class HomeController implements IController {
 
-    constructor(){
+    constructor() {
         this.renderViews();
     }
 
-    renderViews(){
-        require(['../Views/HomeView','../Models/User'], (View ,User) => {
-            var model = new User('Mr', 'Awesome');
-            var view = new View('#main-region', model);
-            view.render();
-        });
+    renderViews() {
+        var model = new User('Mr', 'Awesome');
+        var view = new HomeView('#main-region', model);
+        view.render();
     }
 }
 

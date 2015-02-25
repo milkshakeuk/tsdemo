@@ -4,6 +4,7 @@
 /// <reference path="../../../../typings/jquery/jquery.d.ts"/>
 
 import IController = require('../Interfaces/IController');
+import NavigationView = require('../Views/NavigationView');
 
 class NavigationController implements IController {
 
@@ -12,14 +13,12 @@ class NavigationController implements IController {
     }
 
     renderViews(){
-        require(['../Views/NavigationView'], (View) => {
-            var model = { navs:[
-                { name: 'Home', path:'#', chosen: true },
-                { name: 'About', path:'#/about' }
-            ]};
-            var view = new View('#nav-region', model);
-            view.render();
-        });
+        var model = { navs:[
+            { name: 'Home', path:'#', chosen: true },
+            { name: 'About', path:'#/about' }
+        ]};
+        var view = new NavigationView('#nav-region', model);
+        view.render();
     }
 }
 export = NavigationController;
