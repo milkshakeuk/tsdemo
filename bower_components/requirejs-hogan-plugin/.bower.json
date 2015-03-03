@@ -18,6 +18,5 @@
   },
   "_source": "git://github.com/millermedeiros/requirejs-hogan-plugin.git",
   "_target": "~0.3.1",
-  "_originalSource": "requirejs-hogan-plugin",
-  "_direct": true
+  "_originalSource": "requirejs-hogan-plugin"
 }

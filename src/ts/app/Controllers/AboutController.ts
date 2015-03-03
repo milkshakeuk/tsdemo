@@ -1,21 +1,19 @@
 // File: AboutController.ts
-/// <reference path="../Interfaces/IController" />
+/// <reference path="../interfaces/IController" />
+/// <reference path="../Controllers/BaseController" />
 /// <reference path="../Views/AboutView" />
 /// <reference path="../../../../typings/jquery/jquery.d.ts"/>
 
 import IController = require('../Interfaces/IController');
-import AboutView = require('../Views/AboutView');
+import BaseController = require('../Controllers/BaseController');
 
-class AboutController implements IController {
-
-    constructor(){
-        this.renderViews();
-    }
+class AboutController extends BaseController implements IController {
 
     renderViews(){
         var view = new AboutView('#main-region');
         view.render();
     }
+
 }
 
 export = AboutController;

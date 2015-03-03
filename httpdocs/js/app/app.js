@@ -1,4 +1,4 @@
-define(["require", "exports", './Services/Router', './Controllers/NavigationController'], function (require, exports, Router, NavigationController) {
+define(["require", "exports", './Services/Router/Router', './Services/Router/Route', './Controllers/NavigationController'], function (require, exports, Router, Route, NavigationController) {
     var App = (function () {
         function App() {
             var _this = this;
@@ -6,9 +6,10 @@ define(["require", "exports", './Services/Router', './Controllers/NavigationCont
                 _this.navigation = new NavigationController();
                 _this.router.route();
             };
-            this.router = new Router();
-            this.router.addRoute({ path: '/', controller: 'HomeController' });
-            this.router.addRoute({ path: '/about', controller: 'AboutController' });
+            this.router = new Router('../../Controllers/');
+            this.router.addRoute(new Route('/', 'HomeController'));
+            this.router.addRoute(new Route('/about', 'AboutController'));
+            this.router.addRoute(new Route('/variables/{var1:string}/more/{var2:number}', 'VariableController'));
         }
         return App;
     })();

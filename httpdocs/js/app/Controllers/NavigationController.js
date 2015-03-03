@@ -1,17 +1,27 @@
-define(["require", "exports", '../Views/NavigationView'], function (require, exports, NavigationView) {
-    var NavigationController = (function () {
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+define(["require", "exports", '../Controllers/BaseController'], function (require, exports, BaseController) {
+    var NavigationController = (function (_super) {
+        __extends(NavigationController, _super);
         function NavigationController() {
-            this.renderViews();
+            _super.apply(this, arguments);
         }
         NavigationController.prototype.renderViews = function () {
-            var model = { navs: [
-                { name: 'Home', path: '#', chosen: true },
-                { name: 'About', path: '#/about' }
-            ] };
-            var view = new NavigationView('#nav-region', model);
-            view.render();
+            require(['../Views/NavigationView'], function (View) {
+                var model = { navs: [
+                    { name: 'Home', path: '#', chosen: true },
+                    { name: 'About', path: '#/about' },
+                    { name: 'Variable', path: '#/variables/yeehaaa/more/123456' }
+                ] };
+                var view = new View('#nav-region', model);
+                view.render();
+            });
         };
         return NavigationController;
-    })();
+    })(BaseController);
     return NavigationController;
 });

@@ -5,13 +5,13 @@ requirejs.config({
     baseUrl: 'js',
     paths: {
         json2:'libs/json2',
-        underscore: 'libs/underscore',
-        moment: 'libs/moment',
-        jquery: 'libs/jquery',
-        bootstrap : "libs/bootstrap",
-        hogan: 'libs/hogan',
-        text: 'libs/text',
-        hgn: 'libs/hgn'
+        underscore: '../../bower_components/underscore/underscore',
+        moment: '../../bower_components/momentjs/moment',
+        jquery: '../../bower_components/jquery/dist/jquery',
+        bootstrap : "../../bower_components/bootstrap/dist/js/bootstrap",
+        hogan: '../../bower_components/requirejs-hogan-plugin/hogan',
+        text: '../../bower_components/requirejs-hogan-plugin/text',
+        hgn: '../../bower_components/requirejs-hogan-plugin/hgn'
     },
     hgn: {
         templateExtension: '.html'
