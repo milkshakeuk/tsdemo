@@ -5,18 +5,19 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 define(["require", "exports", '../Controllers/BaseController'], function (require, exports, BaseController) {
-    var AboutController = (function (_super) {
-        __extends(AboutController, _super);
-        function AboutController() {
+    var VariableController = (function (_super) {
+        __extends(VariableController, _super);
+        function VariableController() {
             _super.apply(this, arguments);
         }
-        AboutController.prototype.renderViews = function () {
-            require(['../Views/AboutView'], function (View) {
-                var view = new View('#main-region');
+        VariableController.prototype.renderViews = function () {
+            var _this = this;
+            require(['../Views/VariableView'], function (View) {
+                var view = new View('#main-region', { variables: _this.urlVariables });
                 view.render();
             });
         };
-        return AboutController;
+        return VariableController;
     })(BaseController);
-    return AboutController;
+    return VariableController;
 });

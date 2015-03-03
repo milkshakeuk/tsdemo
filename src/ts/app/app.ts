@@ -1,11 +1,13 @@
 // File: app.ts
 /// <reference path="../../../typings/requirejs/require.d.ts"/>
-/// <reference path="./Services/Router"/>
+/// <reference path="./Services/Router/Router"/>
+/// <reference path="./Services/Router/Route"/>
 /// <reference path="./Interfaces/IController" />
-/// <reference path="./Controllers/NavigationController" />
+/// <reference path="Controllers/NavigationController" />
 
 
-import Router = require('./Services/Router');
+import Router = require('./Services/Router/Router');
+import Route = require('./Services/Router/Route');
 import IController = require('./Interfaces/IController');
 import NavigationController = require('./Controllers/NavigationController');
 
@@ -15,9 +17,10 @@ class App {
     navigation:IController;
 
     constructor(){
-        this.router = new Router();
-        this.router.addRoute({ path: '/', controller: 'HomeController'});
-        this.router.addRoute({ path:'/about', controller: 'AboutController'});
+        this.router = new Router('../../Controllers/');
+        this.router.addRoute(new Route('/', 'HomeController'));
+        this.router.addRoute(new Route('/about', 'AboutController'));
+        this.router.addRoute(new Route('/variables/{var1:string}/more/{var2:number}', 'VariableController'));
     }
 
     start = () => {
