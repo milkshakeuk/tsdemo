@@ -38,4 +38,8 @@ describe("Route Suite", () => {
         expect(variables[1].type).toBe('number');
         expect(variables[1].value).toBe(9889);
     });
+
+    it("should throw an exception", () => {
+        expect(()=> {new Route('/base/{myvar:boolean}/fragment', 'SomeController')}).toThrowError(TypeError);
+    });
 });

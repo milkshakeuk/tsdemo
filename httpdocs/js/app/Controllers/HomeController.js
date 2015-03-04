@@ -4,7 +4,7 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-define(["require", "exports", '../Controllers/BaseController'], function (require, exports, BaseController) {
+define(["require", "exports", './BaseController'], function (require, exports, BaseController) {
     var HomeController = (function (_super) {
         __extends(HomeController, _super);
         function HomeController() {
