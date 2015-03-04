@@ -6,6 +6,7 @@
 
 import IController = require('../Interfaces/IController');
 import BaseController = require('../Controllers/BaseController');
+import AboutView = require('../Views/AboutView');
 
 class AboutController extends BaseController implements IController {
 

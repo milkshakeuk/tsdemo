@@ -7,6 +7,8 @@
 
 import IController = require('../Interfaces/IController');
 import BaseController = require('./BaseController');
+import HomeView = require('../Views/HomeView');
+import User = require('../Models/User');
 
 class HomeController extends BaseController implements IController {
 
