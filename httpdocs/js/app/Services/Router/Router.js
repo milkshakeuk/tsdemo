@@ -18,7 +18,6 @@ define(["require", "exports", 'underscore'], function (require, exports, _) {
             });
             if (!route) {
                 throw new ReferenceError('No route found that matches given path: ${path}');
-                return;
             }
             this.initialiseController(route, path);
         };
