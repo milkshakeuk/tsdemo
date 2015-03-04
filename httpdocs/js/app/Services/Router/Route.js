@@ -43,6 +43,9 @@ define(["require", "exports", './UrlVariable', 'underscore'], function (require,
                 return;
             var match;
             while ((match = this.varTypePattern.exec(this.path)) != null) {
+                if (match[3] !== 'string' && match[3] !== 'number') {
+                    throw new TypeError("Unexpected Type: Only primitive types String and Number allowed.");
+                }
                 this.urlVariables.push(new UrlVariable(match[2], match[3]));
             }
         };
