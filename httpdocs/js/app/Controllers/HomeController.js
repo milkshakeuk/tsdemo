@@ -11,11 +11,9 @@ define(["require", "exports", './BaseController'], function (require, exports, B
             _super.apply(this, arguments);
         }
         HomeController.prototype.renderViews = function () {
-            require(['../Views/HomeView', '../Models/User'], function (View, User) {
-                var model = new User('Mr', 'Awesome');
-                var view = new View('#main-region', model);
-                view.render();
-            });
+            var model = new User('Mr', 'Awesome');
+            var view = new HomeView('#main-region', model);
+            view.render();
         };
         return HomeController;
     })(BaseController);

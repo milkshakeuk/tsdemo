@@ -10,10 +10,8 @@ import BaseController = require('../Controllers/BaseController');
 class AboutController extends BaseController implements IController {
 
     renderViews(){
-        require(['../Views/AboutView'], (View) => {
-            var view = new View('#main-region');
-            view.render();
-        });
+        var view = new AboutView('#main-region');
+        view.render();
     }
 
 }

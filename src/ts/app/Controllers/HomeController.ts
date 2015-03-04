@@ -10,12 +10,10 @@ import BaseController = require('./BaseController');
 
 class HomeController extends BaseController implements IController {
 
-    renderViews(){
-        require(['../Views/HomeView','../Models/User'], (View ,User) => {
-            var model = new User('Mr', 'Awesome');
-            var view = new View('#main-region', model);
-            view.render();
-        });
+    renderViews() {
+        var model = new User('Mr', 'Awesome');
+        var view = new HomeView('#main-region', model);
+        view.render();
     }
 
 }

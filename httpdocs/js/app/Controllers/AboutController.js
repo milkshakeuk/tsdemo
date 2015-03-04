@@ -11,10 +11,8 @@ define(["require", "exports", '../Controllers/BaseController'], function (requir
             _super.apply(this, arguments);
         }
         AboutController.prototype.renderViews = function () {
-            require(['../Views/AboutView'], function (View) {
-                var view = new View('#main-region');
-                view.render();
-            });
+            var view = new AboutView('#main-region');
+            view.render();
         };
         return AboutController;
     })(BaseController);
