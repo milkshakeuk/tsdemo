@@ -6,4 +6,5 @@ bower_components
 bower_components/**/
 *.js.map
 tests/*.js
+!tests/test-main.js
 src/ts/**/*.js
