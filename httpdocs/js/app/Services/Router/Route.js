@@ -17,7 +17,7 @@ define(["require", "exports", './UrlVariable', 'underscore'], function (require,
             if (!this.hasVariables)
                 return;
             var match;
-            while ((match = this.varValPattern.exec(url)) != null) {
+            while ((match = this.varValPattern.exec(url)) !== null) {
                 _.each(this.urlVariables, function (item, i) {
                     var variable = _this.urlVariables[i];
                     if (variable.type === 'string') {
@@ -42,7 +42,7 @@ define(["require", "exports", './UrlVariable', 'underscore'], function (require,
             if (this.path.indexOf('{') === -1)
                 return;
             var match;
-            while ((match = this.varTypePattern.exec(this.path)) != null) {
+            while ((match = this.varTypePattern.exec(this.path)) !== null) {
                 if (match[3] !== 'string' && match[3] !== 'number') {
                     throw new TypeError("Unexpected Type: Only primitive types String and Number allowed.");
                 }
