@@ -1,14 +1,14 @@
 //File: HomeView.ts
 /// <reference path="../Interfaces/IView" />
 /// <reference path="./BaseView" />
-/// <amd-dependency path="../../../../bower_components/requirejs-hogan-plugin/hgn!app/templates/home" />
+/// <amd-dependency path="/js/libs/hgn.js!app/templates/home" name="compiler"/>
 
 import IView = require('../Interfaces/IView');
 import BaseView = require('./BaseView');
 
 class HomeView extends BaseView implements IView {
     setCompiler():void {
-        this.compiler = require('../../../../bower_components/requirejs-hogan-plugin/hgn!app/templates/home');
+        this.compiler = compiler;
     }
 }
 export = HomeView;

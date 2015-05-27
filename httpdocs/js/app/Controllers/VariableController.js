@@ -1,3 +1,8 @@
+// File: VariableController.ts
+/// <reference path="../Interfaces/IController" />
+/// <reference path="../Controllers/BaseController" />
+/// <reference path="../Views/VariableView" />
+/// <reference path="../../../../typings/jquery/jquery.d.ts"/>
 var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }

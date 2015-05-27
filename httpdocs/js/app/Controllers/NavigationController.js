@@ -1,3 +1,8 @@
+// File: NavigationController.ts
+/// <reference path="../Interfaces/IController" />
+/// <reference path="./BaseController" />
+/// <reference path="../Views/NavigationView" />
+/// <reference path="../../../../typings/jquery/jquery.d.ts"/>
 var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -13,10 +18,10 @@ define(["require", "exports", './BaseController'], function (require, exports, B
         NavigationController.prototype.renderViews = function () {
             require(['../Views/NavigationView'], function (View) {
                 var model = { navs: [
-                    { name: 'Home', path: '#', chosen: true },
-                    { name: 'About', path: '#/about' },
-                    { name: 'Variable', path: '#/variables/yeehaaa/more/123456' }
-                ] };
+                        { name: 'Home', path: '#', chosen: true },
+                        { name: 'About', path: '#/about' },
+                        { name: 'Variable', path: '#/variables/yeehaaa/more/123456' }
+                    ] };
                 var view = new View('#nav-region', model);
                 view.render();
             });

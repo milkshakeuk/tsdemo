@@ -1,3 +1,4 @@
+// File: UrlVariable.ts
 define(["require", "exports"], function (require, exports) {
     var UrlVariable = (function () {
         function UrlVariable(name, type) {
