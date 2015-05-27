@@ -1,3 +1,5 @@
+// File: user.ts
+/// <reference path="../Interfaces/INameable"/>
 define(["require", "exports"], function (require, exports) {
     var User = (function () {
         function User(forename, surname) {

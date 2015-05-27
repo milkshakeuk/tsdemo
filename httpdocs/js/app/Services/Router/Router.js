@@ -1,12 +1,14 @@
+//File: Router.ts
+/// <reference path="../../../../../typings/underscore/underscore.d.ts"/>
+/// <reference path="../../Interfaces/IController" />
+/// <reference path="../../Interfaces/IRoute" />
 define(["require", "exports", 'underscore'], function (require, exports, _) {
     var Router = (function () {
         function Router(basePath) {
             var _this = this;
             this.basePath = basePath;
             this.routes = [];
-            window.addEventListener('hashchange', function () {
-                _this.route();
-            });
+            window.addEventListener('hashchange', function () { _this.route(); });
         }
         Router.prototype.addRoute = function (route) {
             this.routes.push(route);

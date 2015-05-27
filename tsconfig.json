@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "module": "amd",
+        "removeComments": true,
+        "sourceMap": true,
+        "target": "ES5",
+        "listFiles": true
+    }
+}

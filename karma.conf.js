@@ -15,8 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      { pattern: 'bower_components/jquery/dist/jquery.js', included: false },
-      { pattern: 'bower_components/underscore/underscore.js', included: false },
+      { pattern: 'httpdocs/js/libs/jquery.js', included: false },
+      { pattern: 'httpdocs/js/libs/underscore.js', included: false },
       { pattern: 'src/ts/**/*.js', included: false },
       { pattern: 'tests/**/*Spec.js', included: false },
       'tests/test-main.js'
@@ -38,7 +38,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['mocha'],
 
 
     // web server port
@@ -51,7 +51,7 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_ERROR,
 
 
     // enable / disable watching file and executing tests whenever any file changes

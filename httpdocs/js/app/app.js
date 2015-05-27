@@ -1,3 +1,9 @@
+// File: app.ts
+/// <reference path="../../../typings/requirejs/require.d.ts"/>
+/// <reference path="./Services/Router/Router"/>
+/// <reference path="./Services/Router/Route"/>
+/// <reference path="./Interfaces/IController" />
+/// <reference path="Controllers/NavigationController" />
 define(["require", "exports", './Services/Router/Router', './Services/Router/Route', './Controllers/NavigationController'], function (require, exports, Router, Route, NavigationController) {
     var App = (function () {
         function App() {

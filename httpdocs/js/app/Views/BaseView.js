@@ -1,3 +1,6 @@
+//File: BaseView.ts
+/// <reference path="../Interfaces/IView" />
+/// <reference path="../../../../typings/jquery/jquery.d.ts"/>
 define(["require", "exports", 'jquery'], function (require, exports, $) {
     var BaseView = (function () {
         function BaseView(target, model) {
@@ -12,10 +15,8 @@ define(["require", "exports", 'jquery'], function (require, exports, $) {
             this.model = model;
             this.setCompiler();
         }
-        BaseView.prototype.setCompiler = function () {
-        };
-        BaseView.prototype.renderHook = function () {
-        };
+        BaseView.prototype.setCompiler = function () { };
+        BaseView.prototype.renderHook = function () { };
         return BaseView;
     })();
     return BaseView;

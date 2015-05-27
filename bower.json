@@ -13,9 +13,11 @@
     "bower_components"
   ],
   "dependencies": {
-    "requirejs": "~2.1.15",
+    "requirejs": "~2.1.16",
     "requirejs-hogan-plugin": "~0.3.1",
-    "bootstrap": "~3.3.2",
-    "underscore": "~1.7.0"
+    "bootstrap": "~3.3.4",
+    "underscore": "~1.8.2",
+    "json2": "*",
+    "jquery": "~2.1.3"
   }
 }

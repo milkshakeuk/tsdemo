@@ -1,3 +1,9 @@
+// File: Route.ts
+/// <reference path="../../Interfaces/IRoute" />
+/// <reference path="./UrlVariable" />
+/// <reference path="../../Interfaces/IController" />
+/// <reference path="../../../../../typings/underscore/underscore.d.ts"/>
+/// <reference path="../../../../../typings/jquery/jquery.d.ts"/>
 define(["require", "exports", './UrlVariable', 'underscore'], function (require, exports, UrlVariable, _) {
     var Route = (function () {
         function Route(path, controller, urlVariables) {
@@ -33,8 +39,10 @@ define(["require", "exports", './UrlVariable', 'underscore'], function (require,
             }
         };
         Route.prototype._pathToPatterns = function () {
-            var urlMatch = this.path.replace(/\{[a-zA-Z0-9]+:[a-zA-Z]+\}/ig, '[a-zA-Z0-9]+').replace('\/', '\\/');
-            var valExtract = this.path.replace(/\{[a-zA-Z0-9]+:[a-zA-Z]+\}/ig, '([a-zA-Z0-9]+)').replace('\/', '\\/');
+            var urlMatch = this.path.replace(/\{[a-zA-Z0-9]+:[a-zA-Z]+\}/ig, '[a-zA-Z0-9]+')
+                .replace('\/', '\\/');
+            var valExtract = this.path.replace(/\{[a-zA-Z0-9]+:[a-zA-Z]+\}/ig, '([a-zA-Z0-9]+)')
+                .replace('\/', '\\/');
             this.urlPattern = new RegExp("^" + urlMatch + "$");
             this.varValPattern = new RegExp(valExtract, 'g');
         };

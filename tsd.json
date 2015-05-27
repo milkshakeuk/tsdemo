@@ -6,22 +6,22 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "jquery/jquery.d.ts": {
-      "commit": "ca32947b75a2b1203779dac7154ffbc232746e4d"
+      "commit": "65ea56c919fd95dcd0ca3c59c9aa5eaa99c86885"
     },
     "underscore/underscore.d.ts": {
-      "commit": "ca32947b75a2b1203779dac7154ffbc232746e4d"
+      "commit": "be0b6b394f77a59e192ad7cfec18078706e44db5"
     },
     "requirejs/require.d.ts": {
-      "commit": "b06163dc428d1da48ad43b1fb48ad1a19ef7e826"
-    },
-    "moment/moment.d.ts": {
-      "commit": "49b821f06b711a86be349c4bbff4351467c024b9"
+      "commit": "be0b6b394f77a59e192ad7cfec18078706e44db5"
     },
     "bootstrap/bootstrap.d.ts": {
-      "commit": "49b821f06b711a86be349c4bbff4351467c024b9"
+      "commit": "be0b6b394f77a59e192ad7cfec18078706e44db5"
     },
     "jasmine/jasmine.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
+      "commit": "be0b6b394f77a59e192ad7cfec18078706e44db5"
+    },
+    "node/node.d.ts": {
+      "commit": "7d2f0aa875cc3bc41f3567e3ff99d344df986155"
     }
   }
 }
