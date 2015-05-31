@@ -71,12 +71,12 @@ gulp.task('scripts', function() {
 
 // clean js files
 gulp.task('clean:all', function (cb) {
-    var files = ['httpdocs/js/**/*.js', 'src/ts/**/*.js', '!tests/test-main.js', 'tests/**/*.js'];
+    var files = ['httpdocs/js/**/*.js', 'src/ts/**/*.js', 'tests/**/*.js', '!tests/test-main.js'];
     del(files, cb);
 });
 
 gulp.task('clean:tests', function(cb) {
-    var files = ['src/ts/**/*.js', '!tests/test-main.js', 'tests/**/*.js'];
+    var files = ['src/ts/**/*.js', 'tests/**/*.js', '!tests/test-main.js'];
     del(files, cb);
 });
 

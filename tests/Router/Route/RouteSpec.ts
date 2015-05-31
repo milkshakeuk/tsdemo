@@ -1,8 +1,8 @@
 // File: RouteSpec.ts
 /// <reference path="../../../typings/jasmine/jasmine.d.ts"/>
-/// <reference path="../../../src/ts/app/Services/Router/route"/>
+/// <reference path="../../../src/ts/app/Services/Router/Route"/>
 
-import Route = require('../../../src/ts/app/Services/Router/route');
+import Route = require('../../../src/ts/app/Services/Router/Route');
 
 describe("Route Suite", () => {
 
