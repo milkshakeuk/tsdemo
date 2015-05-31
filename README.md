@@ -1,4 +1,4 @@
-# tsdemo - TypsScript Demo
+# tsdemo - TypsScript Demo [![Build Status][travis-image]][travis-url]
 TypeScript demo using requirejs and external modules.
 
 ## Get set up
@@ -59,3 +59,6 @@ this task will:
 
 ## To Do
 Add a generic middle man service to handle ajax calls, model binding/creation and handling response errors and display that to the user dialog/model?
+
+[travis-url]: https://travis-ci.org/milkshakeuk/tsdemo
+[travis-image]: https://travis-ci.org/milkshakeuk/tsdemo.svg?branch=master
