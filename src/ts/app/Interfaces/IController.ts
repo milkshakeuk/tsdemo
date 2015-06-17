@@ -3,4 +3,4 @@
 interface IController {
     renderViews():void;
 }
-export = IController;
+export default IController;

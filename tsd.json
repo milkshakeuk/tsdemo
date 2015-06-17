@@ -11,17 +11,14 @@
     "underscore/underscore.d.ts": {
       "commit": "be0b6b394f77a59e192ad7cfec18078706e44db5"
     },
-    "requirejs/require.d.ts": {
-      "commit": "be0b6b394f77a59e192ad7cfec18078706e44db5"
-    },
     "bootstrap/bootstrap.d.ts": {
       "commit": "be0b6b394f77a59e192ad7cfec18078706e44db5"
     },
     "jasmine/jasmine.d.ts": {
       "commit": "be0b6b394f77a59e192ad7cfec18078706e44db5"
     },
-    "node/node.d.ts": {
-      "commit": "7d2f0aa875cc3bc41f3567e3ff99d344df986155"
+    "handlebars/handlebars.d.ts": {
+      "commit": "230b346dad577c91af8db9f0a1db26697d2dd5bd"
     }
   }
 }

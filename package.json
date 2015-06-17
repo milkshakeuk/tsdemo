@@ -31,5 +31,20 @@
     "phantomjs": "^1.9.17",
     "requirejs": "^2.1.17",
     "typescript": "^1.5.0-beta"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "httpdocs/",
+      "packages": "httpdocs/jspm"
+    },
+    "dependencies": {
+      "handlebars": "github:components/handlebars.js@^3.0.3",
+      "jquery": "github:components/jquery@^2.1.4",
+      "text": "github:systemjs/plugin-text@^0.0.2",
+      "underscore": "npm:underscore@^1.8.3"
+    },
+    "devDependencies": {
+      "typescript": "github:mhegazy/typescript@v1.5-beta2"
+    }
   }
 }

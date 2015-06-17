@@ -1,7 +1,7 @@
 //File: IRoute.ts
 /// <reference path="../Services/Router/UrlVariable" />
 
-import UrlVariable = require('../Services/Router/UrlVariable');
+import UrlVariable from '../Services/Router/UrlVariable';
 
 interface IRoute {
     path:string;
@@ -10,4 +10,4 @@ interface IRoute {
     isMatch(path:string):boolean;
     parseVariableValues(url:string):void;
 }
-export = IRoute;
+export default IRoute;

@@ -3371,5 +3371,5 @@ interface _ChainOfArrays<T> extends _Chain<T[]> {
 declare var _: UnderscoreStatic;
 
 declare module "underscore" {
-	export = _;
+	export default _;
 }

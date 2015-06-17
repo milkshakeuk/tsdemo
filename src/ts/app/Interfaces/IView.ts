@@ -3,8 +3,8 @@ interface IView {
     target:string;
     $el:any;
     render():void;
-    compiler:any;
-    setCompiler():void;
+    template:any;
+    setTemplate():void;
     renderHook():void;
 }
-export = IView;
+export default IView;

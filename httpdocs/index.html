@@ -31,6 +31,11 @@
 
     <div id="main-region" class="container">
     </div>
-    <script data-main="js/main" src="js/libs/require.js"></script>
+    <!--<script data-main="js/main" src="js/libs/require.js"></script>-->
+        <script src="jspm/system.src.js"></script>
+        <script src="js/config.js"></script>
+        <script>
+            System.import('js/main');
+        </script>
     </body>
 </html>

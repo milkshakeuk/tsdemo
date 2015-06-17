@@ -1,36 +1,49 @@
+window.__karma__.loaded = function () {};
+
+System.config({
+  "baseURL": "/base",
+  "defaultJSExtensions": true,
+  "transpiler": "typescript",
+  "paths": {
+    "github:*": "httpdocs/jspm/github/*",
+    "npm:*": "httpdocs/jspm/npm/*"
+  }
+});
+
+System.config({
+    "packages": {
+        "httpdocs/js": {
+            "defaultExtension": "ts"
+        },
+        "tests": {
+            "defaultExtension": "ts"
+        }
+    },
+    "map": {
+        "handlebars": "github:components/handlebars.js@3.0.3",
+        "jquery": "github:components/jquery@2.1.4",
+        "text": "github:systemjs/plugin-text@0.0.2",
+        "typescript": "github:mhegazy/typescript@v1.5-beta2",
+        "underscore": "npm:underscore@1.8.3"
+    }
+});
+
 var allTestFiles = [];
-var TEST_REGEXP = /(spec|test)\.js$/i;
+var TEST_REGEXP = /(spec|test)\.ts$/i;
 
 var pathToModule = function (path) {
-    return path.replace(/^\/base\//, '').replace(/\.js$/, '');
+    return path.replace(/\.ts$/, '');
 };
+
 
 Object.keys(window.__karma__.files).forEach(function (file) {
     if (TEST_REGEXP.test(file)) {
-        // Normalize paths to RequireJS module names.
         allTestFiles.push(pathToModule(file));
     }
 });
 
-require.config({
-    // Karma serves files under /base, which is the basePath from your config file
-    baseUrl: '/base',
-    paths: {
-        underscore: 'httpdocs/js/libs/underscore',
-        jquery: 'httpdocs/js/libs/jquery',
-    },
-    shim: {
-        jquery: {
-            exports: 'jQuery'
-        },
-        underscore: {
-            exports: '_'
-        }
-    },
+var testModules = allTestFiles.map(function(spec) { return System.import(spec) });
 
-    // dynamically load all test files
-    deps: allTestFiles,
-
-    // we have to kickoff jasmine, as it is asynchronous
-    callback: window.__karma__.start
+Promise.all(testModules).then(function() {
+    window.__karma__.start();
 });

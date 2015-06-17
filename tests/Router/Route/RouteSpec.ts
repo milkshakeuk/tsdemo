@@ -2,7 +2,7 @@
 /// <reference path="../../../typings/jasmine/jasmine.d.ts"/>
 /// <reference path="../../../src/ts/app/Services/Router/Route"/>
 
-import Route = require('../../../src/ts/app/Services/Router/Route');
+import Route from 'httpdocs/js/app/Services/Router/Route';
 
 describe("Route Suite", () => {
 

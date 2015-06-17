@@ -6,4 +6,4 @@ interface INameable {
     fullName: string;
 }
 
-export = INameable;
+export default INameable;

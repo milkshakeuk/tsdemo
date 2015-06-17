@@ -1,5 +1,3 @@
-/// <reference path="typings/node/node.d.ts"/>
-
 var gulp = require('gulp');
 var gulpSequence = require('gulp-sequence');
 var ts = require('gulp-typescript');
@@ -24,11 +22,13 @@ gulp.task('serve', function () {
 
 // compile typescript
 gulp.task('build', function () {
-    var settings = { typescript: require('typescript') };
-    var tsProject = ts.createProject('./tsconfig.json', settings);
-    return gulp.src(['!src/ts/**/Interfaces/**.ts','src/ts/**/*.ts'])
-               .pipe(ts(tsProject, undefined, ts.reporter.longReporter()))
-               .js.pipe(gulp.dest('httpdocs/js/'));
+    return gulp.src(['!src/ts/**/Interfaces/**.ts','src/ts/**/*.ts','src/ts/**/*.html'])
+                     .pipe(gulp.dest('httpdocs/js/'));
+    // var settings = { typescript: require('typescript') };
+    // var tsProject = ts.createProject('./tsconfig.json', settings);
+    // return gulp.src(['!src/ts/**/Interfaces/**.ts','src/ts/**/*.ts'])
+    //            .pipe(ts(tsProject, undefined, ts.reporter.longReporter()))
+    //            .js.pipe(gulp.dest('httpdocs/js/'));
 });
 
 // compile the jasmine tests
@@ -53,25 +53,9 @@ gulp.task('build:for:tests', function () {
     return stream;
 });
 
-// copy client libs to httpdocs
-gulp.task('scripts', function() {
-    var stream = gulp.src([
-                paths.bower + '/json2/json2.js',
-                paths.bower + '/underscore/underscore.js',
-                paths.bower + '/jquery/dist/jquery.js',
-                paths.bower + '/bootstrap/dist/js/bootstrap.js',
-                paths.bower + '/requirejs-hogan-plugin/hogan.js',
-                paths.bower + '/requirejs-hogan-plugin/text.js',
-                paths.bower + '/requirejs-hogan-plugin/hgn.js',
-                paths.bower + '/requirejs/require.js'
-                ])
-                .pipe(gulp.dest('httpdocs/js/libs/'));
-    return stream;
-});
-
 // clean js files
 gulp.task('clean:all', function (cb) {
-    var files = ['httpdocs/js/**/*.js', 'src/ts/**/*.js', 'tests/**/*.js', '!tests/test-main.js'];
+    var files = ['httpdocs/js/**/*.js', 'src/ts/**/*.js', 'tests/**/*.js', '!tests/test-main.js','!httpdocs/js/jspm/**/*.js','!httpdocs/js/config.js'];
     del(files, cb);
 });
 
@@ -102,12 +86,12 @@ gulp.task('watch:test', function() {
 
 // default task
 gulp.task('default', function(cb) {
-    gulpSequence('clean:all', ['scripts', 'build'], 'serve', cb);
+    gulpSequence('clean:all', 'build', 'serve', cb);
 });
 
 // run karma test suite
 gulp.task('test', function(cb) {
-    gulpSequence('clean:all', ['scripts', 'build:for:tests', 'build:tests'], 'run:tests', 'clean:tests', cb);
+    gulpSequence('clean:all', ['build:for:tests', 'build:tests'], 'run:tests', 'clean:tests', cb);
 });
 
 gulp.task('test:auto', function(cb) {
