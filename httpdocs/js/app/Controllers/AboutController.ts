@@ -3,7 +3,7 @@
 /// <reference path="../Views/AboutView" />
 /// <reference path="../../../../typings/tsd.d.ts" />
 
-import BaseController from'../Controllers/BaseController';
+import { BaseController } from '../Controllers/BaseController';
 import AboutView from'../Views/AboutView';
 
 export default class AboutController extends BaseController {

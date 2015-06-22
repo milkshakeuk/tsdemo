@@ -1,5 +1,4 @@
 // File: app.ts
-/// <reference path="../../../typings/requirejs/require.d.ts"/>
 /// <reference path="./Services/Router/Router"/>
 /// <reference path="./Services/Router/Route"/>
 /// <reference path="./Interfaces/IController" />
@@ -18,9 +17,9 @@ export default class App {
 
     constructor(){
         this.router = new Router('/js/app/Controllers/');
-        this.router.addRoute(new Route('/', 'HomeController'));
-        this.router.addRoute(new Route('/about', 'AboutController'));
-        this.router.addRoute(new Route('/variables/{var1:string}/more/{var2:number}', 'VariableController'));
+        this.router.addRoute(new Route('/'));
+        this.router.addRoute(new Route('/about'));
+        this.router.addRoute(new Route('/variable/{var1:string}/more/{var2:number}'));
     }
 
     start = () => {

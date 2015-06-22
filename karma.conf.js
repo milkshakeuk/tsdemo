@@ -17,8 +17,9 @@ module.exports = function(config) {
     files: [
       { pattern: 'httpdocs/jspm/system.src.js' },
       { pattern: 'httpdocs/jspm/**/*.js', included: false },
-      { pattern: 'httpdocs/js/**/*.ts', included: false },
+      { pattern: 'src/ts/**/*.ts', included: false },
       { pattern: 'tests/**/*Spec.ts', included: false },
+      'tests/test-config.js',
       'tests/test-main.js'
     ],
 

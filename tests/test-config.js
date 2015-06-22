@@ -1,17 +1,19 @@
 System.config({
-    "baseURL": "/",
-    "defaultJSExtensions": true,
-    "transpiler": "typescript",
-    "paths": {
-        "github:*": "jspm/github/*",
-        "npm:*": "jspm/npm/*"
-    }
+	"baseURL": "/base",
+	"defaultJSExtensions": true,
+	"transpiler": "typescript",
+	"paths": {
+		"github:*": "httpdocs/jspm/github/*",
+		"npm:*": "httpdocs/jspm/npm/*"
+	}
 });
 
 System.config({
     "packages": {
-        "js": {
-            "main": "main.ts",
+        "src/ts": {
+            "defaultExtension": "ts"
+        },
+        "tests": {
             "defaultExtension": "ts"
         }
     },
@@ -23,4 +25,3 @@ System.config({
         "underscore": "npm:underscore@1.8.3"
     }
 });
-

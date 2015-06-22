@@ -10,5 +10,5 @@ httpdocs/js/jspm/
 httpdocs/js/jspm/**/
 *.js.map
 tests/*.js
-!tests/test-main.js
+!tests/test-*.js
 src/ts/**/*.js

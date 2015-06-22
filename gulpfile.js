@@ -1,12 +1,6 @@
 var gulp = require('gulp');
 var gulpSequence = require('gulp-sequence');
-var ts = require('gulp-typescript');
-var del = require('del');
 
-
-var paths = {
-    'bower':'bower_components'
-};
 
 // serve website
 gulp.task('serve', function () {
@@ -23,49 +17,11 @@ gulp.task('serve', function () {
 // compile typescript
 gulp.task('build', function () {
     return gulp.src(['!src/ts/**/Interfaces/**.ts','src/ts/**/*.ts','src/ts/**/*.html'])
-                     .pipe(gulp.dest('httpdocs/js/'));
-    // var settings = { typescript: require('typescript') };
-    // var tsProject = ts.createProject('./tsconfig.json', settings);
-    // return gulp.src(['!src/ts/**/Interfaces/**.ts','src/ts/**/*.ts'])
-    //            .pipe(ts(tsProject, undefined, ts.reporter.longReporter()))
-    //            .js.pipe(gulp.dest('httpdocs/js/'));
+               .pipe(gulp.dest('httpdocs/js/'));
 });
 
-// compile the jasmine tests
-gulp.task('build:tests', function () {
-    var settings = { typescript: require('typescript') };
-    var tsProject = ts.createProject('./tsconfig.json', settings);
-    
-    var stream = gulp.src('tests/**/*Spec.ts')
-                     .pipe(ts(tsProject, undefined, ts.reporter.longReporter()))
-                     .js.pipe(gulp.dest('tests/'));
-    return stream;
-});
-
-// compile in the source directory for test
-gulp.task('build:for:tests', function () {
-    var settings = { typescript: require('typescript') };
-    var tsProject = ts.createProject('./tsconfig.json', settings);
-
-    var stream = gulp.src(['!src/ts/**/Interfaces/**.ts','src/ts/**/*.ts'])
-                     .pipe(ts(tsProject, undefined, ts.reporter.longReporter()))
-                     .js.pipe(gulp.dest('src/ts/'));
-    return stream;
-});
-
-// clean js files
-gulp.task('clean:all', function (cb) {
-    var files = ['httpdocs/js/**/*.js', 'src/ts/**/*.js', 'tests/**/*.js', '!tests/test-main.js','!httpdocs/js/jspm/**/*.js','!httpdocs/js/config.js'];
-    del(files, cb);
-});
-
-gulp.task('clean:tests', function(cb) {
-    var files = ['src/ts/**/*.js', 'tests/**/*.js', '!tests/test-main.js'];
-    del(files, cb);
-});
-
-// run test suite
-gulp.task('run:tests', function(cb) {
+// run karma test suite
+gulp.task('test', function(cb) {
     var karma = require('karma').server;
     var options = {
                 configFile: __dirname + '/karma.conf.js',
@@ -77,23 +33,18 @@ gulp.task('run:tests', function(cb) {
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch('src/ts/**/*.ts', ['compile']);
+    gulp.watch('src/ts/**/*.ts', ['build']);
 });
 
 gulp.task('watch:test', function() {
     gulp.watch(['src/ts/**/*.ts','tests/**/*Spec.ts'], ['test']);
 });
 
-// default task
-gulp.task('default', function(cb) {
-    gulpSequence('clean:all', 'build', 'serve', cb);
-});
-
-// run karma test suite
-gulp.task('test', function(cb) {
-    gulpSequence('clean:all', ['build:for:tests', 'build:tests'], 'run:tests', 'clean:tests', cb);
-});
-
 gulp.task('test:auto', function(cb) {
     gulpSequence('test', 'watch:test', cb);
+});
+
+// default task
+gulp.task('default', function(cb) {
+    gulpSequence('build', 'serve', cb);
 });

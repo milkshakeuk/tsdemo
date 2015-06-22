@@ -2,17 +2,17 @@
 /// <reference path="../../../typings/jasmine/jasmine.d.ts"/>
 /// <reference path="../../../src/ts/app/Services/Router/Route"/>
 
-import Route from 'httpdocs/js/app/Services/Router/Route';
+import Route from 'src/ts/app/Services/Router/Route';
 
 describe("Route Suite", () => {
 
-    var route:Route;
-    var pathToTest:string = '/root/{myvar:string}/path/{othervar:number}';
-    var urlToTtest:string = '/root/teststring/path/9889';
-    var controllerToTest:string = 'HomeController';
+    var route: Route;
+    var pathToTest: string = '/root/{myvar:string}/path/{othervar:number}';
+    var urlToTtest: string = '/root/teststring/path/9889';
+    var controllerToTest: string = 'HomeController';
 
     beforeEach(() => {
-        route = new Route(pathToTest,controllerToTest);
+        route = new Route(pathToTest, controllerToTest);
     });
 
     it("should be instaceof Route", () => {
@@ -40,6 +40,15 @@ describe("Route Suite", () => {
     });
 
     it("should throw an exception", () => {
-        expect(()=> {new Route('/base/{myvar:boolean}/fragment', 'SomeController')}).toThrowError(TypeError);
+        expect(() => { new Route('/base/{myvar:boolean}/fragment', 'SomeController') }).toThrowError(TypeError);
+    });
+
+    it("should use root fragment naming convention", () => {
+        // Assign
+        var expectedController = 'RootController';
+        route = new Route(pathToTest);
+        // Act
+        // Assert
+        expect(route.controller).toBe(expectedController);
     });
 });

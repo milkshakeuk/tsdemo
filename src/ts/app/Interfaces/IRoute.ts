@@ -6,7 +6,7 @@ import UrlVariable from '../Services/Router/UrlVariable';
 interface IRoute {
     path:string;
     controller:string;
-    urlVariables: UrlVariable[];
+    urlVariables: Array<UrlVariable>;
     isMatch(path:string):boolean;
     parseVariableValues(url:string):void;
 }

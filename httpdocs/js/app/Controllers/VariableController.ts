@@ -3,7 +3,7 @@
 /// <reference path="../Views/VariableView" />
 /// <reference path="../../../../typings/tsd.d.ts" />
 
-import BaseController from '../Controllers/BaseController';
+import { BaseController } from '../Controllers/BaseController';
 //import * as System from 'systemjs';
 
 export default class VariableController extends BaseController {
