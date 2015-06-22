@@ -31,12 +31,13 @@
   },
   "jspm": {
     "directories": {
-      "baseURL": "httpdocs/",
+      "baseURL": "httpdocs/js",
       "packages": "httpdocs/jspm"
     },
     "dependencies": {
       "handlebars": "github:components/handlebars.js@^3.0.3",
       "jquery": "github:components/jquery@^2.1.4",
+      "reflect-metadata": "npm:reflect-metadata@^0.1.0",
       "text": "github:systemjs/plugin-text@^0.0.2",
       "underscore": "npm:underscore@^1.8.3"
     },

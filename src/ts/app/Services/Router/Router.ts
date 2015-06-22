@@ -3,6 +3,7 @@
 /// <reference path="../../Interfaces/IController" />
 /// <reference path="../../Interfaces/IRoute" />
 
+import "reflect-metadata";
 import IController from '../../Interfaces/IController';
 import IRoute from '../../Interfaces/IRoute';
 import _ from 'underscore';
@@ -36,6 +37,7 @@ export default class Router {
         route.parseVariableValues(url);
         System.import(this.basePath + route.controller).then((Controller) => {
             this.currentController = new Controller.default(route.urlVariables);
+            console.log(Reflect.getMetadata("registeredRoutes", this.currentController));
         });
     }
 }

@@ -1,5 +1,4 @@
 // File: app.ts
-/// <reference path="../../../typings/requirejs/require.d.ts"/>
 /// <reference path="./Services/Router/Router"/>
 /// <reference path="./Services/Router/Route"/>
 /// <reference path="./Interfaces/IController" />

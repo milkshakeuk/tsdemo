@@ -3,6 +3,7 @@
 /// <reference path="../Services/Router/UrlVariable" />
 /// <reference path="../../../../typings/tsd.d.ts" />
 
+import "reflect-metadata";
 import IController from '../Interfaces/IController';
 import UrlVariable from '../Services/Router/UrlVariable';
 
@@ -18,9 +19,17 @@ export class BaseController implements IController {
     //abstract
     renderViews():void {}
 }
-export function routable(path: string) {
-    return function (target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) {
-        console.log(`${path}`);
+
+export function registerRoute(path: string) {
+    return function (target: BaseController, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) {
+        let registeredRoutes;
+        if(Reflect.hasMetadata("registeredRoutes", target)){
+            registeredRoutes = Reflect.getMetadata("registeredRoutes", target);
+        }else{
+            registeredRoutes = [];
+            Reflect.defineMetadata("registeredRoutes", registeredRoutes, target);
+        }
+        registeredRoutes[path] = propertyKey;
         return descriptor;
     }
 }

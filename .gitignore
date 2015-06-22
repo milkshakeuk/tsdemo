@@ -6,8 +6,8 @@ node_modules
 node_modules/**/
 bower_components
 bower_components/**/
-httpdocs/js/jspm/
-httpdocs/js/jspm/**/
+httpdocs/jspm/
+httpdocs/jspm/**/
 *.js.map
 tests/*.js
 !tests/test-*.js
