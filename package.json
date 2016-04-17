@@ -39,5 +39,12 @@
     "systemjs": "^0.19.26",
     "typescript": "^1.8.10",
     "vinyl-paths": "^2.1.0"
+  },
+  "jspm": {
+    "dependencies": {
+      "handlebars": "github:components/handlebars.js@^4.0.5",
+      "jquery": "npm:jquery@^2.2.3"
+    },
+    "devDependencies": {}
   }
 }
