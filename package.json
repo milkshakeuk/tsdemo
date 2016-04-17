@@ -1,5 +1,5 @@
 {
-  "name": "TypeScriptDemo",
+  "name": "tsdemo",
   "version": "1.0.0",
   "description": "Demo website using TypeScript",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/milkshakeuk/tsdemo.git"
   },
   "scripts": {
-    "test": "gulp test"
+    "test": "karma start --single-run --browsers PhantomJS"
   },
   "keywords": [
     "demo",
