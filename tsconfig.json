@@ -1,9 +1,15 @@
 {
     "compilerOptions": {
         "module": "amd",
-        "removeComments": true,
-        "sourceMap": true,
-        "target": "ES5",
-        "listFiles": true
-    }
+        "target": "es5",
+        "noImplicitAny": false,
+        "rootDir": "src/",
+        "outDir": "httpdocs/",
+        "allowJs": true
+    },
+    "exclude": [
+        "node_modules",
+        "typings/browser",
+        "typings/browser.d.ts"
+    ]
 }

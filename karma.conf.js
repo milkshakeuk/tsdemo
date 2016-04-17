@@ -5,28 +5,49 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: './',
 
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine', 'requirejs'],
+    frameworks: ['systemjs', 'jasmine'],
+
+    systemjs: {
+      configFile: 'config.js',
+      config: {
+        paths: {
+          "*": "*",
+          "src/*": "src/*",
+          "typescript": "node_modules/typescript/lib/typescript.js",
+          "systemjs": "node_modules/systemjs/dist/system.js",
+          'system-polyfills': 'node_modules/systemjs/dist/system-polyfills.js',
+          'es6-module-loader': 'node_modules/es6-module-loader/dist/es6-module-loader.js'
+        },
+        packages: {
+          'test/unit': {
+            defaultExtension: 'ts'
+          },
+          'src': {
+            defaultExtension: 'ts'
+          }
+        },
+        transpiler: 'typescript'
+      },
+      serveFiles: [
+        'src/**/*.ts',
+        'jspm_packages/**/*.js'
+      ]
+    },
 
 
     // list of files / patterns to load in the browser
     files: [
-      { pattern: 'httpdocs/js/libs/jquery.js', included: false },
-      { pattern: 'httpdocs/js/libs/underscore.js', included: false },
-      { pattern: 'src/ts/**/*.js', included: false },
-      { pattern: 'tests/**/*Spec.js', included: false },
-      'tests/test-main.js'
+      'test/unit/**/*.ts'
     ],
 
 
     // list of files to exclude
-    exclude: [
-      'src/ts/main.js'
-    ],
+    exclude: [],
 
 
     // preprocess matching files before serving them to the browser
@@ -51,7 +72,7 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_ERROR,
+    logLevel: config.LOG_INFO,
 
 
     // enable / disable watching file and executing tests whenever any file changes

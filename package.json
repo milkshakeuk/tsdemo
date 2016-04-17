@@ -1,13 +1,13 @@
 {
-  "name": "TypeScriptDemo",
-  "version": "1.0.0",
+  "name": "tsdemo",
+  "version": "1.1.0",
   "description": "Demo website using TypeScript",
   "repository": {
     "type": "git",
     "url": "https://github.com/milkshakeuk/tsdemo.git"
   },
   "scripts": {
-    "test": "gulp test"
+    "test": "karma start --single-run --browsers PhantomJS"
   },
   "keywords": [
     "demo",
@@ -16,20 +16,35 @@
   "author": "Jake Aitchison",
   "license": "LGPL-2.1",
   "devDependencies": {
-    "connect-modrewrite": "^0.8.1",
-    "del": "^1.2.0",
-    "gulp": "^3.8.11",
-    "gulp-sequence": "^0.3.2",
-    "gulp-typescript": "^2.7.5",
+    "del": "^2.2.0",
+    "es6-module-loader": "^0.17.11",
+    "gulp": "^3.9.1",
+    "gulp-define-module": "^0.1.4",
+    "gulp-handlebars": "^4.0.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.13.0",
     "gulp-webserver": "^0.9.1",
-    "jasmine-core": "^2.3.4",
-    "karma": "^0.12.32",
-    "karma-jasmine": "^0.3.5",
-    "karma-mocha-reporter": "^1.0.2",
-    "karma-phantomjs-launcher": "^0.2.0",
-    "karma-requirejs": "^0.2.2",
-    "phantomjs": "^1.9.17",
-    "requirejs": "^2.1.17",
-    "typescript": "^1.5.0-beta"
+    "handlebars": "^4.0.5",
+    "jasmine-core": "^2.4.1",
+    "jspm": "^0.16.33",
+    "karma": "^0.13.22",
+    "karma-jasmine": "^0.3.8",
+    "karma-mocha-reporter": "^2.0.0",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-systemjs": "^0.13.0",
+    "phantomjs-polyfill": "0.0.2",
+    "phantomjs-prebuilt": "^2.1.7",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.5",
+    "systemjs": "^0.19.26",
+    "typescript": "^1.8.10",
+    "vinyl-paths": "^2.1.0"
+  },
+  "jspm": {
+    "dependencies": {
+      "handlebars": "github:components/handlebars.js@^4.0.5",
+      "jquery": "npm:jquery@^2.2.3"
+    },
+    "devDependencies": {}
   }
 }
