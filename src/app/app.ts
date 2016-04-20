@@ -15,7 +15,7 @@ export default class App {
     this.router.addRoute(new Route('/variables/{var1:string}/more/{var2:number}', 'variablecontroller'));
   }
 
-  start = () => {
+  start():void{
     this.navigation = new NavigationController();
     this.router.route();
   }

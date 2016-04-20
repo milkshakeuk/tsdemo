@@ -9,4 +9,5 @@ export default class HomeController extends BaseController {
     var view = new HomeView('#main-region', model);
     view.render();
   }
+  renderHook() { }
 }

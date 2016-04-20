@@ -10,5 +10,6 @@ export abstract class BaseController implements IController {
     this.renderViews();
   }
 
-  abstract renderViews()
+  abstract renderViews(): void;
+  abstract renderHook(): void;
 }

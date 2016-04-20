@@ -6,4 +6,5 @@ export default class AboutController extends BaseController {
     var view = new AboutView('#main-region');
     view.render();
   }
+  renderHook() { }
 }

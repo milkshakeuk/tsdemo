@@ -13,5 +13,5 @@ export default class NavigationController extends BaseController {
     var view = new NavigationView('#nav-region', model);
     view.render();
   }
-
+  renderHook() { }
 }
