@@ -15,7 +15,7 @@ TypeScript demo using systemjs and external modules.
 * [TypeScript](https://www.typescriptlang.org)
 
 ## Get set up
-To get started simply checkout the code and install the developer dependancies:
+To get started simply checkout the code and install the developer dependencies:
 ```
 $ npm install
 ```
@@ -23,6 +23,11 @@ $ npm install
 Next we want to install a couple of node cli-tools:
 ```
 $ npm install -g typescript gulp karma-cli typings jspm
+```
+
+Next we want tell jspm to install our application dependencies:
+```
+$ jspm install
 ```
 
 Finally the typescript declaration files which will provide the IDE with loveley information around the shape of external libs (helps with auto completion and intelisense.
@@ -41,7 +46,7 @@ this task will:
 1. Cleans out the httpdocs directory ready to build the project
 2. Precompiles the `handlebars` templates converts them into modules and copies them to `httpdocs/app/templates`
 3. Build all the typescript source files and place them in the `httpdocs/` directory
-4. Copys our client side dependancies from `jspm_packages/` directory to `httpdocs/jspm_packages`
+4. Copys our client side dependencies from `jspm_packages/` directory to `httpdocs/jspm_packages`
 4. Serves up the website using [gulp-webserver](https://github.com/schickling/gulp-webserver) to [http://localhost:8080](http://localhost:8080)
 
 
